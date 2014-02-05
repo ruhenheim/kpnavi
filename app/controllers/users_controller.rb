@@ -1,8 +1,14 @@
 class UsersController < ApplicationController
+  # 他人の情報を編集できるのは、実践的にはない＝
+  # この辺は、限定可操作を実装する
+  # role = cancan で？ user/3=admin? #>false
+  # TODO: current_user プロファイル表示系に変更してみる
+
   before_filter :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update]
 
   def index
+    # TODO all.order 指定
     @users = User.all
   end
 
@@ -16,7 +22,8 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'success updated.' }#i18n_field(:updated) }
+        # TODO: custume i18n_field(:updated)
+        format.html { redirect_to @user, notice: 'success updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

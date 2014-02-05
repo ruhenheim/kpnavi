@@ -4,6 +4,8 @@
   .form-inputs.inputs
     = f.input :name
     = f.input :kana
+    - # TODO: 年月のスライド固定化は後で問題になるかも
+    - # ex. Date.today.ago(70.years).year
     = f.input :birth_of_date, :as => :date, :start_year => Date.today.year - 70, :end_year => Date.today.year - 16, :discard_day => false, :order => [:year, :month, :day], :input_html => { :class => "input-small" }
     = f.input :sex, :as => :select, include_blank: false
     = f.input :insurance_no
