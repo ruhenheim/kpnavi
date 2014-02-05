@@ -1,5 +1,33 @@
 %h3 User
+
 %p
-  User: #{@user.name}
+  %b Name:
+  = @user.name
 %p
-  Email: #{@user.email if @user.email}
+  %b Email:
+  = @user.email if @user.email
+%p
+  %b Kana:
+  = @user.kana
+%p
+  %b Birth of Date:
+  = @user.birth_of_date
+%p
+  %b Sex:
+  = @user.sex == 1 ? '男' : @user.sex == 2 ? '女' : '不明'
+%p
+  %b Insurance No:
+  = @user.insurance_no
+%p
+  %b Prefecture:
+  = @user.prefecture_code
+%p
+  %b address:
+  = @user.address
+%p
+  %b Tel:
+  = @user.tel
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path

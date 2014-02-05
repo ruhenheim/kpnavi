@@ -1,0 +1,42 @@
+%p#notice= notice
+
+%p
+  %b Entry no:
+  = @checkup_entry.entry_no
+%p
+  %b Staus:
+  = @checkup_entry.staus
+%p
+  %b Request datetime 1:
+  = @checkup_entry.request_datetime_1
+%p
+  %b Request datetime 2:
+  = @checkup_entry.request_datetime_2
+%p
+  %b Request datetime 3:
+  = @checkup_entry.request_datetime_3
+%p
+  %b Cource code:
+  = @checkup_entry.cource_code
+%p
+  %b Request type:
+  = @checkup_entry.request_type
+%p
+  %b Request prefecture code:
+  = @checkup_entry.request_prefecture_code
+%p
+  %b Request hospital:
+  = @checkup_entry.request_hospital
+%p
+  %b Exam datetime:
+  = @checkup_entry.exam_datetime
+%p
+  %b Exam hospital:
+  = @checkup_entry.exam_hospital
+%p
+  %b Exam note:
+  = @checkup_entry.exam_note
+
+= link_to 'Edit', edit_checkup_entry_path(@checkup_entry)
+\|
+= link_to 'Back', checkup_entries_path

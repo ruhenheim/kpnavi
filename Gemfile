@@ -13,6 +13,7 @@ gem 'figaro'
 gem 'haml-rails'
 gem 'mysql2'
 gem 'simple_form'
+gem 'enumerize'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
@@ -21,6 +22,7 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'guard-pow', require: false
+  gem 'heroku_san'
 end
 group :development, :test do
   gem 'factory_girl_rails'

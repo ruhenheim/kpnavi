@@ -66,8 +66,11 @@ GEM
     email_spec (1.5.0)
       launchy (~> 2.1)
       mail (~> 2.2)
+    enumerize (0.7.0)
+      activesupport (>= 3.2)
     erubis (2.7.0)
     eventmachine (1.0.3)
+    excon (0.31.0)
     execjs (2.0.2)
     factory_girl (4.3.0)
       activesupport (>= 3.0.0)
@@ -94,6 +97,13 @@ GEM
       activesupport (>= 4.0.1)
       haml (>= 3.1, < 5.0)
       railties (>= 4.0.1)
+    heroku-api (0.3.17)
+      excon (~> 0.27)
+      multi_json (~> 1.8.2)
+    heroku_san (4.3.2)
+      heroku-api (>= 0.1.2)
+      json
+      rake
     hike (1.2.3)
     hpricot (0.8.6)
     html2haml (1.0.1)
@@ -231,10 +241,12 @@ DEPENDENCIES
   database_cleaner (= 1.0.1)
   devise
   email_spec
+  enumerize
   factory_girl_rails
   figaro
   guard-pow
   haml-rails
+  heroku_san
   html2haml
   hub
   jbuilder (~> 1.2)

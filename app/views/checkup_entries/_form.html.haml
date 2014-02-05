@@ -1,0 +1,19 @@
+= simple_form_for(@checkup_entry) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :entry_no
+    = f.input :staus
+    = f.input :request_datetime_1
+    = f.input :request_datetime_2
+    = f.input :request_datetime_3
+    = f.input :cource_code
+    = f.input :request_type
+    = f.input :request_prefecture_code
+    = f.input :request_hospital
+    = f.input :exam_datetime
+    = f.input :exam_hospital
+    = f.input :exam_note
+
+  .form-actions
+    = f.button :submit

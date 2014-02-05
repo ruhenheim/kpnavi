@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140204150148) do
+ActiveRecord::Schema.define(version: 20140205014058) do
+
+  create_table "checkup_entries", force: true do |t|
+    t.integer  "entry_no"
+    t.integer  "staus"
+    t.datetime "request_datetime_1"
+    t.datetime "request_datetime_2"
+    t.datetime "request_datetime_3"
+    t.integer  "cource_code"
+    t.integer  "request_type"
+    t.integer  "request_prefecture_code"
+    t.string   "request_hospital"
+    t.datetime "exam_datetime"
+    t.string   "exam_hospital"
+    t.text     "exam_note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -27,6 +44,14 @@ ActiveRecord::Schema.define(version: 20140204150148) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "kana"
+    t.integer  "sex"
+    t.date     "birth_of_date"
+    t.string   "insurance_no"
+    t.string   "zipcode"
+    t.integer  "prefecture_code"
+    t.string   "address"
+    t.string   "tel"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

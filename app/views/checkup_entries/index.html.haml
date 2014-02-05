@@ -1,0 +1,41 @@
+%h1 Listing checkup_entries
+
+%table.table.table-bordered.table-striped
+  %tr
+    %th Entry no
+    %th Staus
+    %th Request datetime 1
+    %th Request datetime 2
+    %th Request datetime 3
+    %th Cource code
+    %th Request type
+    %th Request prefecture code
+    %th Request hospital
+    %th Exam datetime
+    %th Exam hospital
+    %th Exam note
+    %th
+    %th
+    %th
+
+  - @checkup_entries.each do |checkup_entry|
+    %tr
+      %td= checkup_entry.entry_no
+      %td= checkup_entry.staus
+      %td= checkup_entry.request_datetime_1
+      %td= checkup_entry.request_datetime_2
+      %td= checkup_entry.request_datetime_3
+      %td= checkup_entry.cource_code
+      %td= checkup_entry.request_type
+      %td= checkup_entry.request_prefecture_code
+      %td= checkup_entry.request_hospital
+      %td= checkup_entry.exam_datetime
+      %td= checkup_entry.exam_hospital
+      %td= checkup_entry.exam_note
+      %td= link_to 'Show', checkup_entry
+      %td= link_to 'Edit', edit_checkup_entry_path(checkup_entry)
+      %td= link_to 'Destroy', checkup_entry, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Checkup entry', new_checkup_entry_path
